@@ -1,0 +1,56 @@
+.container{
+    margin-left: 30%;
+    margin-top: 5%;
+    width: 600px;
+    height: 550px;
+    border: 5px solid cadetblue;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#heading{
+    font-family: cursive;
+    font-size: xx-large;
+    text-align: center; 
+}
+
+label{
+    width: 40%;
+    float: left;
+    font-size: large;
+    
+}
+
+input{
+   margin: 6px;
+   width:300px;
+   height: 18px;
+    /*border-radius: 3px;
+    border-color: cadetblue;*/
+}
+
+input:hover{
+    border: 2px solid cadetblue;
+}
+
+input:focus{
+    outline: 2px solid cadetblue;
+}
+
+#button{
+    height: 35px;
+    width: 120px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    border-style: none;
+    font-family: cursive;
+    font-size: large;
+    margin-left: 20%;
+    margin-top: 30px;
+    box-shadow: 5px 5px 5px black;
+}
+
+#button:hover{
+    box-shadow: none;
+    
+}

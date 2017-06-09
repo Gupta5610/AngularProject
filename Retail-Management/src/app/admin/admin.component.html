@@ -1,0 +1,8 @@
+<div id="AdminHeader" >
+    <input name="q" type="text" size="60" placeholder="Type here....." [(ngModel)]="itemToSearch"/>
+    <button (click)="onSearchClicked()">Search</button> |
+    <button (click)="onAddToCartClicked()" > Add  </button>
+</div>
+<div id="AdminContent" >
+   <router-outlet></router-outlet>
+</div>

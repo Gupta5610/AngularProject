@@ -1,0 +1,17 @@
+<div id="offerList">
+   <h1>{{title}}</h1>
+    <div *ngFor= "let product of products" class ="productGroup">  
+  <div *ngIf="product.include">
+  <div id="leftContent">  
+   <p><label>Name : {{product.name}}</label></p>
+   <p><label>Type : {{product.type}}</label></p>
+   <p><label>Cost : {{product.cost}}</label></p>
+   <p><label>Discount : {{product.discount}}</label></p>
+  </div>
+ <div id="rightContent">
+   <p><button (click)="onButtonClick(product)">{{product.cart ? 'remove' : 'add'}}</button></p>
+ </div>  
+   <hr style="width : 90%;">
+</div>
+    </div>  
+</div>
