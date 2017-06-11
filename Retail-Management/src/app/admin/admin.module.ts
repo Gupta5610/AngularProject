@@ -5,7 +5,7 @@ import { RouterModule } from "@angular/router";
 
 import { AdminComponent } from './admin.component';
 import { AdminSearchComponent } from './admin-search/admin-search.component';
-import { AddComponent } from './add/add.component';
+
 import { CrudService } from "app/admin/Shared/crud.service";
 import { EditComponent } from './edit/edit.component';
 
@@ -29,7 +29,7 @@ import { EditComponent } from './edit/edit.component';
     ])
   ],
    providers: [CrudService],
-  declarations: [AdminComponent, AdminSearchComponent, AddComponent, EditComponent]
+  declarations: [AdminComponent, AdminSearchComponent, EditComponent]
   
 })
 export class AdminModule { }

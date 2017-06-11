@@ -6,7 +6,6 @@ export interface Iproduct {
     id : number;
     include : boolean;
     cart : boolean;
-    inStock : boolean;
 }
 
 
