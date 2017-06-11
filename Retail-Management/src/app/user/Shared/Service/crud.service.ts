@@ -18,9 +18,9 @@ export class CrudService {
        );
    }
   
- 
    getOfferList()
    {
+     this.populateList();
      return this.products;
    }
 

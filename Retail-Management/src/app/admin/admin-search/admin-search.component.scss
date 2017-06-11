@@ -12,3 +12,40 @@
    float: right;
    margin-top: 3%;
 }
+
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
+   
+}
+
+.modal{
+	display: none;
+	position: fixed;
+	padding: 20px;
+	top: 3%;
+	left: 35%;
+	width: 400px;
+	height: 450px;
+	overflow: auto;
+	z-index: 10;
+}
+
+#modal-content{
+
+	background-color: #fefefe;
+	margin: 10% auto;
+	padding: 30px;
+	border:1px solid;
+	width: 200px;
+	height:250px;
+}

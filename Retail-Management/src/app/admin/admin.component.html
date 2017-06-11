@@ -6,3 +6,41 @@
 <div id="AdminContent" >
    <router-outlet></router-outlet>
 </div>
+
+<DIV id="AddModal" class="modal">
+     <DIV id="modal-content">
+                <form>  
+                
+                    <div class ="form group">
+                        <label> Name </label>
+                        <input [(ngModel)]="product.name" type="text" name="name" >
+                    </div>
+                    
+                    <div class ="form group">
+                        <label> Type </label>
+                        <input  [(ngModel)]="product.type" type="text" name="type">
+                    </div>
+
+                    <div class ="form group">
+                        <label> Cost </label>
+                        <input [(ngModel)]="product.cost" type="text"  name="cost">
+                    </div>
+
+                    <div class ="form group">
+                        <label> Discount </label>
+                        <input [(ngModel)]="product.discount" type="text"  name="discount">
+                    </div>
+                    <div class ="form group">
+                        <label> OfferList </label>
+                        <input [(ngModel)]="product.include" type="checkbox"  name="offlistinclude">
+                    </div>
+
+                    <br><br><br>
+                    <div class ="form group">
+                        <button (click)="onAddProduct()"> Add </button>
+                    </div>
+
+                </form> 
+      </DIV>
+</DIV>  
+  <div id="overlay"></div>

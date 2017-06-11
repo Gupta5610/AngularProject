@@ -1,4 +1,6 @@
-<div *ngFor= "let product of products" class ="productGroup">  
+<div *ngFor= "let product of products" class ="productGroup"> 
+
+<div >
   <div id="leftContent">  
    <p><label>Name : {{product.name}}</label></p>
    <p><label>Type : {{product.type}}</label></p>
@@ -6,7 +8,46 @@
    <p><label>Discount : {{product.discount}}</label></p>
   </div>
  <div id="rightContent"> 
-   <p><button > Edit button </button></p> 
+   <p><button (click)="onEditClicked(product)"> Edit button </button></p> 
  </div>  
    <hr>
-</div>  
+ </div>  
+</div>
+
+<DIV id="myModal" class="modal">
+     <DIV id="modal-content">
+          <form>  
+                  
+                    <div class ="form group">
+                      <label> Name </label>
+                      <input [(ngModel)]="product.name" type="text" name="name" >
+                    </div>
+                    
+                    <div class ="form group">
+                        <label> Type </label>
+                        <input  [(ngModel)]="product.type" type="text" name="type">
+                    </div>
+
+                    <div class ="form group">
+                        <label> Cost </label>
+                        <input [(ngModel)]="product.cost" type="text"  name="cost">
+                    </div>
+
+                    <div class ="form group">
+                        <label> Discount </label>
+                        <input [(ngModel)]="product.discount" type="text"  name="discount">
+                    </div>
+                    <div class ="form group">
+                        <label> OfferList </label>
+                        <input [(ngModel)]="product.include" type="checkbox"  name="offlistinclude">
+                    </div>
+          <br><br><br>
+          <div>
+          <button (click)="closeModal()">Close</button>
+          <button (click)="onSaveClicked()">Save</button>
+          <button (click)="onDeleteClicked()">Delete</button>
+          </div>   
+          </form> 
+     </DIV>
+  </DIV>
+  <div id="overlay"></div>

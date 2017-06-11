@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { CrudService } from "app/user/Shared/Service/crud.service";
 
 @Component({
   selector: 'app-user',
@@ -10,11 +11,13 @@ export class UserComponent implements OnInit {
 
   itemToSearch : string;
 
-  constructor(private _router:Router) { 
-    
+  constructor(private _router:Router, private _crudService : CrudService) { 
+        this._crudService.populateList();
     }
 
   ngOnInit() {
+        
+        this._crudService.populateList();
   }
 
    onSearchClicked()

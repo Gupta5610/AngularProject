@@ -25,14 +25,15 @@ export class CrudService {
           this.products=products
        );
 
+       if(this.products == null)
+        {
+          this.products = new Array<Iproduct>();
+        }
+
         this.products.push(product);
        this._serachService.putpost(this.products);
   }
 
-  edit()
-  {
-
-  }
 
   getList(name:string)
   {
@@ -53,6 +54,8 @@ export class CrudService {
             
               if(this.products[i].name.indexOf(name)!=(-1))
                   {
+                    let k : number = Date.now();
+                    this.products[i].id=k;
                     temp.push(this.products[i]);
                   }
             }
@@ -60,9 +63,38 @@ export class CrudService {
       return temp;
   }
 
-  saveData(products : Iproduct[])
+  saveData(product : Iproduct)
   {
-    this._serachService.putpost(products);
+ 
+    console.log("save data "+product.id); 
+
+     for(let i=0;i<this.products.length;i++)
+            {
+              if(this.products[i].id === product.id )
+                  {
+                    this.products[i]= product;
+                    break;
+                  }
+            }
+
+     this._serachService.putpost(this.products);
+  }
+
+  deletedata(product : Iproduct)
+  {   
+    let i:number;
+
+      for( i=0;i<this.products.length;i++)
+            {
+              if(this.products[i].id === product.id )
+                  {
+                    break;
+                  }
+            }
+     
+    this.products.splice(i,1);
+    this._serachService.putpost(this.products);
+
   }
 
 }

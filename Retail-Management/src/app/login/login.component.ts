@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { SearchService } from "app/shared/services/search.service";
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,7 @@ export class LoginComponent {
      User ="User";
      title="Retail Inventory Mangement";
 
-  constructor(private _router:Router){
-     }
+  constructor(private _router:Router,private _service : SearchService){}
      userLogin(){
        this._router.navigate(['/user']);
      }
