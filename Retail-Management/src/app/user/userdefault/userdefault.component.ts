@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Iproduct } from "app/admin/Shared/Model/iproduct";
 import { CrudService } from "app/user/Shared/Service/crud.service";
+import { Iproduct } from "app/shared/Model/iproduct";
 
 @Component({
   selector: 'app-userdefault',
@@ -12,9 +12,12 @@ export class UserdefaultComponent implements OnInit {
   title:string = "OfferList";
   button:string = "Add to cart";
   products : Iproduct[];
+  recentProducts : Iproduct[];
 
    constructor(private _crudService:CrudService) {
-     this.products=this._crudService.getList();
+     this.products=this._crudService.getOfferList();
+    //  this.recentProducts=this._crudService.getRecentProducts();
+    //  console.log(this.recentProducts);
      console.log(this.products);
    }
 
@@ -23,7 +26,7 @@ export class UserdefaultComponent implements OnInit {
 
   onButtonClick(product: Iproduct)
   {
-   this._crudService.onButtonClicked(product,this.products);
+   this._crudService.onButtonClicked(product);
   }
 
 }

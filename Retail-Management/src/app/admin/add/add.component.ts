@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 // import { NgForm } from '@angular/common'
-import { Iproduct } from "app/admin/Shared/Model/iproduct";
 import { Router } from "@angular/router";
 import { CrudService } from "app/admin/Shared/crud.service";
+import { Iproduct } from "app/shared/Model/iproduct";
 
 @Component({
   selector: 'app-add',

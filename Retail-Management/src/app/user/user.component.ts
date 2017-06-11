@@ -8,16 +8,19 @@ import { Router } from "@angular/router";
 })
 export class UserComponent implements OnInit {
 
-  constructor(private _router:Router) { 
+  itemToSearch : string;
 
-  }
+  constructor(private _router:Router) { 
+    
+    }
 
   ngOnInit() {
   }
 
    onSearchClicked()
    {
-       this._router.navigate(['/user/search']);
+       this._router.navigate(["user",this.itemToSearch])
+       console.log("hi");
    }
 
 }

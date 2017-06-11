@@ -1,5 +1,5 @@
 <div id="UserHeader" >
-    <input name="q" type="text" size="60" placeholder="Type here..." />
+    <input    id="box" name="q" type="text" size="60" placeholder="Type here....." [(ngModel)]="itemToSearch" />
     <button (click)="onSearchClicked()">Search</button>
 </div>
 <div id="UserContent" >

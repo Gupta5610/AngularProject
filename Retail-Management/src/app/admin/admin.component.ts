@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +10,7 @@ import { Router,ActivatedRoute } from "@angular/router";
 export class AdminComponent implements OnInit {
 
   itemToSearch:string;
-  constructor(private _router:Router,private _activatedRouter:ActivatedRoute) { 
+  constructor(private _router:Router) { 
     this.itemToSearch = "";
   
   }

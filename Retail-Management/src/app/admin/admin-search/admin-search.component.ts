@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Iproduct } from "app/admin/Shared/Model/iproduct";
 import { CrudService } from "app/admin/Shared/crud.service";
 import { ActivatedRoute } from "@angular/router";
+import { Iproduct } from "app/shared/Model/iproduct";
 
 @Component({
   selector: 'app-admin-search',
@@ -12,9 +12,10 @@ export class AdminSearchComponent implements OnInit {
   productName : string;
   products : Iproduct[];
   constructor(private _crudService:CrudService,private _activated:ActivatedRoute) {
-    
       this._activated.params.subscribe(parmas=>this.ngOnInit());
    }
+
+   
   ngOnInit() {
      this.productName = this._activated.snapshot.params["searchText"];
      console.log(this.productName); 

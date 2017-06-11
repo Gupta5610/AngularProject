@@ -1,27 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Iproduct } from "app/admin/Shared/Model/iproduct";
+import { Iproduct } from "app/shared/Model/iproduct";
+import { SearchService } from "app/shared/services/search.service";
 
 @Injectable()
 export class CrudService {
   
-  id :number;
-  products =new Array<Iproduct>();
+  
+  products :Iproduct[];
 
-  constructor() { 
-   
-  }
+  constructor(private _serachService:SearchService) { 
+       this.populateList();
+   }
 
+   populateList()
+   {
+         this._serachService.getPost().subscribe(products =>
+          this.products=products
+       );
+   }
   add(product : Iproduct)
   {
-      if(localStorage.getItem("list"))
-        {
-          this.products = JSON.parse(localStorage.getItem("list"));
-        }
+        
+        this._serachService.getPost().subscribe(products =>
+          this.products=products
+       );
 
-       
         this.products.push(product);
-
-        localStorage.setItem("list",JSON.stringify(this.products));
+       this._serachService.putpost(this.products);
   }
 
   edit()
@@ -31,7 +36,10 @@ export class CrudService {
 
   getList(name:string)
   {
-     this.products=JSON.parse(localStorage.getItem("list"));
+       this._serachService.getPost().subscribe(products =>
+          this.products=products
+       );
+
       console.log("IN get" +this.products);
      let temp=new Array<Iproduct>();
      if(name === undefined || name == "")
@@ -39,7 +47,7 @@ export class CrudService {
       
       for(let i=0;i<this.products.length;i++)
             {
-              debugger;
+              
               console.log()
               console.log();
             
@@ -48,10 +56,13 @@ export class CrudService {
                     temp.push(this.products[i]);
                   }
             }
-
-          
             console.log("In get "+temp)
       return temp;
+  }
+
+  saveData(products : Iproduct[])
+  {
+    this._serachService.putpost(products);
   }
 
 }

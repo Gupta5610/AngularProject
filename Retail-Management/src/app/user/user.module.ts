@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 import { UserComponent } from './user.component';
@@ -12,9 +13,9 @@ import { CrudService } from "app/user/Shared/Service/crud.service";
 
 
 @NgModule({
-  imports: [
+  imports: [FormsModule,
     CommonModule,
-    RouterModule.forRoot([
+    RouterModule.forChild([
         {
               
           path : 'user',
@@ -25,9 +26,10 @@ import { CrudService } from "app/user/Shared/Service/crud.service";
                 component : UserdefaultComponent,      
           },
           {
-                path : 'search',
+                path : ':searchText',
                 component : UserSearchComponent
-          }
+          },
+
           ]
         }
      ])
