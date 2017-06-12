@@ -15,17 +15,19 @@ export class UserdefaultComponent implements OnInit {
   recentProducts : Iproduct[];
 
    constructor(private _crudService:CrudService) {
-     this.products=this._crudService.getOfferList();
-    //  this.recentProducts=this._crudService.getRecentProducts();
-    //  console.log(this.recentProducts);
-     console.log(this.products);
+     console.log("UserDefaultCompenent Constructor called ... ");
+     this.products=this._crudService.getOfferList(); 
    }
 
   ngOnInit() {
+     console.log("UserDefaultCompenent ngOnInit called ... ");
   } 
+
+  // To add / Remove from the cart 
 
   onButtonClick(product: Iproduct)
   {
+    console.log("onButtonClick ...");
    this._crudService.onButtonClicked(product);
   }
 

@@ -1,0 +1,45 @@
+<div class="container">
+    <h2 id="heading"> Vehicle Registration Form (View Only)</h2>
+<form #f="ngForm">
+
+     <div class="form-group">
+             <label for="name">First Name</label>
+            <input type="text"  name="firstName" class="form-control"
+                [(ngModel)]="firstName" disabled>
+        </div>
+         <div class="form-group">
+            <label>Last Name</label>
+            <input type="text"  name="lastName" class="form-control"
+                [(ngModel)]="lastName" disabled>
+        </div>
+       <div class="form-group">
+            <label>Vehicle registration no</label>
+            <input type="text"  name="registrationNo" class="form-control"
+                [(ngModel)]="registrationNo" disabled>
+      </div>
+        <div class="form-group">
+            <label>Mobile number</label>
+            <input type="text"  name="mobileNo" class="form-control"
+                [(ngModel)]="mobileNo" disabled>
+       </div>
+        <div class="form-group">
+            <label>Address</label>
+            <input type="text"  name="address" class="form-control"
+                [(ngModel)]="address" disabled>
+       </div>
+      <div class="form-group">
+            <label>Pickup Date</label>
+            <input type="date" name="pickUpDate" class="form-control"
+                [(ngModel)]="pickUpDate" disabled>
+       </div>
+       <div class="form-group">
+            <label>Return Date</label>
+            <input type="date" name="returnDate" class="form-control"
+                [(ngModel)]="returnDate" disabled>
+        </div>
+       <div class="form-group">
+               <td> <button class='btn btn-primary' [routerLink]="['/home']"> Back </button> 
+
+       </div>
+</form>
+ </div>

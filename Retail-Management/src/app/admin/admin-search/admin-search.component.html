@@ -8,7 +8,7 @@
    <p><label>Discount : {{product.discount}}</label></p>
   </div>
  <div id="rightContent"> 
-   <p><button (click)="onEditClicked(product)"> Edit button </button></p> 
+   <p><button class="searchButton" (click)="onEditClicked(product)"> Edit button </button></p> 
  </div>  
    <hr>
  </div>  
@@ -19,33 +19,37 @@
           <form>  
                   
                     <div class ="form group">
-                      <label> Name </label>
-                      <input [(ngModel)]="product.name" type="text" name="name" >
+                      <label class="lbl" > Name </label>
+                      <input class="inp"  [(ngModel)]="product.name" type="text" name="name" >
                     </div>
                     
                     <div class ="form group">
-                        <label> Type </label>
-                        <input  [(ngModel)]="product.type" type="text" name="type">
+                        <label class="lbl" > Type </label>
+                        <input class="inp"  [(ngModel)]="product.type" type="text" name="type">
                     </div>
 
                     <div class ="form group">
-                        <label> Cost </label>
-                        <input [(ngModel)]="product.cost" type="text"  name="cost">
+                        <label class="lbl" > Cost </label>
+                        <input class="inp" [(ngModel)]="product.cost" type="text"  name="cost">
                     </div>
 
                     <div class ="form group">
-                        <label> Discount </label>
-                        <input [(ngModel)]="product.discount" type="text"  name="discount">
+                        <label class="lbl" > Discount </label>
+                        <input class="inp" [(ngModel)]="product.discount" type="text"  name="discount">
                     </div>
                     <div class ="form group">
-                        <label> OfferList </label>
-                        <input [(ngModel)]="product.include" type="checkbox"  name="offlistinclude">
+                        <label class="lbl" > OfferList </label>
+                        <input class="inp" [(ngModel)]="product.include" type="checkbox"  name="offlistinclude">
+                    </div>
+                    <div class ="form group">
+                        <label class="lbl" style="margin-left:-120px;"> InStock </label>
+                        <input class="inp" [(ngModel)]="product.inStock" type="checkbox"  name="InStock">
                     </div>
           <br><br><br>
           <div>
-          <button (click)="closeModal()">Close</button>
-          <button (click)="onSaveClicked()">Save</button>
-          <button (click)="onDeleteClicked()">Delete</button>
+          <button class="formButton" (click)="closeModal()">Close</button>
+          <button class="formButton" (click)="onSaveClicked()">Save</button>
+          <button class="formButton" (click)="onDeleteClicked()">Delete</button>
           </div>   
           </form> 
      </DIV>

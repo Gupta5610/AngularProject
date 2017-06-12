@@ -16,24 +16,28 @@ export class UserSearchComponent implements OnInit {
   product : string;
   products : Iproduct[];
   productName : string;
+  
   constructor(private _crudService : CrudService,private _activated:ActivatedRoute) { 
-     
+     console.log("UserSearchCompenent Constructor called ... ");
       this._activated.params.subscribe(parmas=>this.ngOnInit());
-
+     
   }
+
+ // add / remove from the user cart 
 
   onButtonClick(product: Iproduct)
   {
-   this._crudService.onButtonClicked(product);
+    console.log("onButtonClick ...");
+    this._crudService.onButtonClicked(product);
   }
  
  
   ngOnInit() {
+    
+     console.log("UserSearchCompenent ngOnInit called ... ");
 
      this.productName = this._activated.snapshot.params["searchText"];
-     console.log(this.productName); 
      this.products=this._crudService.getList(this.productName);
-     console.log(this.products);
   }
 
 }

@@ -1,0 +1,93 @@
+<div class="container">
+    <h3 id="heading">{{formTitle}}</h3>
+    <form id=form #f="ngForm" (ngSubmit)="onSaveClick()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input name="name" type="text" autofocus [(ngModel)]="customer.name" placeholder="Enter full name" minlength="5"  maxlength="20"
+                 pattern="[a-zA-Z][a-zA-Z ]+" required #name="ngModel">
+            <div *ngIf="name.errors && (name.dirty||name.touched)">
+                <div [hidden]="!name.errors.required">
+                    <span id="error">  Name is required</span>
+                </div>
+                <div [hidden]="!name.errors.minlength">
+                    <span id="error"> Name must be at least 5 characters long. </span>
+                </div>
+                <div [hidden]="!name.errors.pattern">
+                    <span id="error"> Only alphabet is allowed.</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input name="age" type="number"  [(ngModel)]="customer.age" placeholder="Enter your age" 
+                  required #age="ngModel">
+            <div *ngIf="age.errors && (age.dirty||age.touched)">
+                <div [hidden]="!age.errors.required">
+                    <span id="error">  Age is required</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input name="description" type="text"  [(ngModel)]="customer.description" placeholder="Enter your description" minlength="1"  maxlength="50"
+                  required #description="ngModel">
+            <div *ngIf="description.errors && (description.dirty||description.touched)">
+                <div [hidden]="!description.errors.required">
+                    <span id="error">  Description is required</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mobileNo">Mobile No:</label>
+            <input name="mobileNo" type="text"  [(ngModel)]="customer.mobileNo" placeholder="Enter your mobile number" minlength="10"  maxlength="10"
+               pattern="[0-9]*"   required #mobileNo="ngModel">
+            <div *ngIf="mobileNo.errors && (mobileNo.dirty||mobileNo.touched)">
+                <div [hidden]="!mobileNo.errors.required">
+                    <span id="error">  Mobile number is required</span>
+                </div>
+                <div [hidden]="!mobileNo.errors.pattern">
+                   <span id="error"> Mobile number  must cantains digits .</span>
+                </div>
+                <div [hidden]="!mobileNo.errors.minlength">
+                    <span id="error"> Mobile number  must cantains 10 digits .</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+        <label>Type:</label>
+        <input style="width:20px;" name="type" type="radio" [(ngModel)]="customer.type" value="Cooprate" checked #fn=ngModel>Cooprate
+        <input style="width:20px;" name="type" type="radio" [(ngModel)]="customer.type" value="Regular" #fn=ngModel>Regular
+        </div>
+        <div class="form-group">
+        <label>Loyal Program Subscribed:</label>
+        <input name="subscribed" style="width:20px" type="checkbox" [(ngModel)]="customer.subscribed" #fn=ngModel>
+        </div>
+        <div class="form-group">
+        <label>PickUp Date:</label>
+        <input name="date" type="date" [(ngModel)]="customer.date"  required #fn=ngModel>
+        </div>
+        <div class="form-group">
+        <label>Charges:</label>
+        <input name="charges" type="number" [(ngModel)]="customer.charges" placeholder="Please enter charges" [minLength]="1"  [maxLength]="10"
+             required #fn=ngModel>
+        </div>
+        <div class="form-group">
+        <label>Number of Employees:</label>
+        <input name="noOfEmployees" type="number" [(ngModel)]="customer.noOfEmployees" placeholder="Enter number of employees" [minLength]="1"
+             [maxLength]="10"  required #fn=ngModel>
+        </div>
+        <div class="form-group">
+        <label>Distance Travelled:</label>
+        <input name="distance" type="number" [(ngModel)]="customer.distance" placeholder="Enter distance " [minLength]="1"  [maxLength]="10"
+             required #fn=ngModel>
+        </div>
+        <div id="test" >
+        <button id ="save" class="btn" [disabled]="!f.valid"> Save </button>
+        <button id ="reset" class="btn" type="reset"> Reset </button>
+        </div>
+       
+    </form>
+</div>
+
+

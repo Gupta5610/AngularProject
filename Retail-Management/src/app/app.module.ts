@@ -27,4 +27,11 @@ import { SearchService } from "app/shared/services/search.service";
   providers: [SearchService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  /**
+   *
+   */
+  constructor() {
+    console.log("App Module Loaded ...");
+  }
+}

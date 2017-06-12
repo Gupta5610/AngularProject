@@ -1,0 +1,38 @@
+<div id="pageHeading">
+    <h1> {{pageTitle}} </h1>
+</div>
+
+<div id="tableHeading">
+    <h3> {{tableTitle}} </h3>
+</div>
+
+<table id="table">
+    <thead>
+        <th> Name </th>
+        <th> Type </th>
+        <th> Description </th>
+        <th> Charges </th>
+        <th> Action </th>
+    </thead>
+    <tbody>
+        <!--<tr *ngFor='let customer of customers'>
+                    <td>{{customer.name | uppercase }} {{customer.lastName | uppercase }}</td>
+                    <td>{{customer.type | uppercase }}</td>
+                    <td>{{customer.description | uppercase }}</td>
+                    [routerLink]="['/view',customer.index]"
+                    <td>{{customer.charges | uppercase }}</td>-->
+                <tr *ngFor='let customer of customersList'>
+
+                    <td>{{customer.name | uppercase}}</td>
+                    <td>{{customer.type }}</td>
+                    <td>{{customer.description}}</td>
+                    <td>{{customer.finalPrice}}</td>
+                    <td> <input type="button" id="button" value="Delete" (click)=onDeleteClick(customer)>
+                     <input type="button" id="button" value="Update" [routerLink]="['/update',customer.mobileNo]">
+                     <input type="button" id="button" value="Details" [routerLink]="['/details',customer.mobileNo]"> 
+                    </td>
+                </tr>
+    </tbody>
+</table>
+<br> <br> <br>
+<input type="button" id="addButton" value="Add new customer" (click)=addCustomer()>

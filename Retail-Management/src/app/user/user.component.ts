@@ -12,18 +12,23 @@ export class UserComponent implements OnInit {
   itemToSearch : string;
 
   constructor(private _router:Router, private _crudService : CrudService) { 
+      console.log("UserComponent Constructor Called ... ");
         this._crudService.populateList();
+        this.itemToSearch="";
     }
 
   ngOnInit() {
-        
+      console.log("UserComponent ngOnInit Called ... ");
         this._crudService.populateList();
   }
 
+   // search the item accroding to the value in search box 
+
    onSearchClicked()
    {
+      console.log("onSearchClicked ...");
        this._router.navigate(["user",this.itemToSearch])
-       console.log("hi");
+      
    }
 
 }

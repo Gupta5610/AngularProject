@@ -1,0 +1,25 @@
+.container{
+    width: 800px;
+    height: 700px;
+    border: 2px solid darkblue;;
+    padding: 30px;
+}
+
+#heading{
+    font-size: 42px;
+    text-align: center;
+    padding: -21px;
+    font-family: initial;
+    color: darkblue;
+}
+
+#submit{
+        margin-left: 45%;
+    width: 140px;
+    height: 40px;
+    font-size: larger;
+}
+
+#submit:hover{
+    box-shadow: 5px 5px 5px black;
+}

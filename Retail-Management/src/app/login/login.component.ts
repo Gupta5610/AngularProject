@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { SearchService } from "app/shared/services/search.service";
 
 @Component({
   selector: 'app-login',
@@ -9,20 +8,27 @@ import { SearchService } from "app/shared/services/search.service";
 })
 export class LoginComponent {
   
-  Administrator ="Admin";
-     User ="User";
+     Administrator ="Login as Admin";
+     User ="Login as User";
      title="Retail Inventory Mangement";
 
-  constructor(private _router:Router,private _service : SearchService){}
-     userLogin(){
+  constructor(private _router:Router){
+     console.log("LoginComponent constructor called ...")
+  }
+      // router used to navigate to user component or admin componenet 
+
+       userLogin(){
+       console.log("Logging in as User ...")
        this._router.navigate(['/user']);
      }
 
      adminLogin(){
+       console.log("Logging in as Administrator ")
        this._router.navigate(['/admin']);
      }
 
   ngOnInit() {
+    console.log("LoginComponent ngOnInit called ...")
   }
 
 }

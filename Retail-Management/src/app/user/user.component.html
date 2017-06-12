@@ -1,7 +1,7 @@
-<div id="UserHeader" >
-    <input    id="box" name="q" type="text" size="60" placeholder="Type here....." [(ngModel)]="itemToSearch" />
-    <button (click)="onSearchClicked()">Search</button>
+<div id="UserHeader" style="" >
+    <input  class="search"  id="box" name="q" type="text" size="60" placeholder="Type here....." [(ngModel)]="itemToSearch" />
+    <button class="searchButton" (click)="onSearchClicked()">Search</button>
 </div>
-<div id="UserContent" >
+<div id="UserContent"  >
     <router-outlet></router-outlet>
 </div>

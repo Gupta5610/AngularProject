@@ -8,64 +8,65 @@ export class CrudService {
    recentProducts : Iproduct[];
   
   constructor(private _serachService:SearchService) {
+    console.log("User CrudService Constructor Called ... ")
      this.populateList();
    }
 
    populateList()
    {
-         this._serachService.getPost().subscribe(products =>
-          this.products=products
+        console.log("PopulateList ... ")
+         this._serachService.getProductList().subscribe(products =>
+         this.products=products
        );
    }
   
+   // return the list and check for valid offers and inStock 
+
    getOfferList()
    {
+     console.log("getOfferList ...")
      this.populateList();
      return this.products;
    }
 
    getList(name:string)
    {
-     this._serachService.getPost().subscribe(products =>
-          this.products=products
-       );
+     console.log("User getList ... ")
+    
+     this.populateList();
      
-      console.log("IN get" +this.products);
+     // create a temporry list  
      let temp=new Array<Iproduct>();
      if(name === undefined || name == "")
       { return this.products; }
       
       for(let i=0;i<this.products.length;i++)
             {
-              
-              console.log()
-              console.log();
-            
               if(this.products[i].name.indexOf(name)!=(-1))
                   {
+                    // populate the list according to the criteria 
                     temp.push(this.products[i]);
                   }
             }
 
-          
-            console.log("In get "+temp)
       return temp;
    }
+
+   // add / remove the product from cart 
 
     onButtonClicked(product : Iproduct)
     {
        
-        console.log(product);
+        console.log("onButtonClicked ... ");
         for(var i =0;i<this.products.length;i++)
         {
-           if(this.products[i].name==product.name)
+           if(this.products[i].id==product.id)
               {
                   this.products[i]=product;
               }
         }
         product.cart=!product.cart;
-      
-         this._serachService.putpost(this.products);
+        this._serachService.putProductList(this.products);
     }
 
 }

@@ -1,7 +1,7 @@
 <div id="offerList" class="list">
    <h1>{{title}}</h1>
     <div *ngFor= "let product of products" class ="productGroup">  
-         <div *ngIf="product.include">
+         <div *ngIf="product.include && product.inStock">
               <div id="leftContent">  
                   <p><label>Name : {{product.name}}</label></p>
                   <p><label>Type : {{product.type}}</label></p>
@@ -9,7 +9,7 @@
                   <p><label>Discount : {{product.discount}}</label></p>
               </div>
               <div id="rightContent">
-                  <p><button (click)="onButtonClick(product)">{{product.cart ? 'remove' : 'add'}}</button></p>
+                  <p><button class="formButton" (click)="onButtonClick(product)">{{product.cart ? ' Remove from Cart ' : ' Add to Cart '}}</button></p>
               </div>  
               <hr style="width : 90%;">
           </div>

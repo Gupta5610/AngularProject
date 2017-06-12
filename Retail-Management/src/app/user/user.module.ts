@@ -37,4 +37,13 @@ import { CrudService } from "app/user/Shared/Service/crud.service";
   providers: [CrudService],
   declarations: [UserComponent, UserdefaultComponent, UserSearchComponent]
 })
-export class UserModule { }
+export class UserModule { 
+
+  /**
+   *
+   */
+  constructor() {
+   console.log("UserModule loaded ... ");
+    
+  }
+}

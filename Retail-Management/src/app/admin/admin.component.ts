@@ -12,9 +12,10 @@ import { Iproduct } from "app/shared/Model/iproduct";
 export class AdminComponent implements OnInit {
 
   itemToSearch:string;
-   product : Iproduct;
+  product : Iproduct;
 
   constructor(private _router:Router,private _crudService: CrudService) { 
+    console.log("AdminComponent constructor called ...")
     this.itemToSearch = "";
     this._crudService.populateList();
       this.product={
@@ -25,43 +26,58 @@ export class AdminComponent implements OnInit {
             cart : false,
             cost : 0,
             id : Date.now(),
+            inStock : true
       }
   }
 
   ngOnInit() {
+
+    console.log("AdminComponent ngOnInit called ...")
     this._crudService.populateList();
   }
   
-  onAddToCartClicked()
+  // show add modal 
+
+  onAddProduct()
    {
-          this.showModal();
+      console.log("onAddProduct ...");
+       this.showModal();
    }
+
+   // search the product from the list 
 
    onSearchClicked()
    {
-         this._router.navigate(["admin",this.itemToSearch])
+      console.log("onSearchClicked ...");  
+      this._router.navigate(["admin",this.itemToSearch])
    }
 
-    onAddProduct()
-    {
+   // add the product to the list 
 
-    this._crudService.add(this.product);
-    this.closeModal();
-    this._router.navigate(['/admin']);
+    onAddProductToList()
+    {
     
+        console.log("onAddProductToList ...");
+            this._crudService.add(this.product);
+            this.closeModal();
+            this._router.navigate(['/admin']);
+            
    }
 
     showModal(){
-	  	       
-	  	  document.getElementById("overlay").style.display = "block";
-        document.getElementById('AddModal').style.display = "block";
+	  	 
+        console.log("Show Modal");
+          document.getElementById("overlay").style.display = "block";
+          document.getElementById('AddModal').style.display = "block";
 
 	  }
 
      closeModal(){
+       
+       console.log("Close Modal ");
           document.getElementById("overlay").style.display = "none";
           document.getElementById('AddModal').style.display = "none";  
-      } 
+   } 
 
 
 }

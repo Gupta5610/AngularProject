@@ -7,7 +7,6 @@ import { AdminComponent } from './admin.component';
 import { AdminSearchComponent } from './admin-search/admin-search.component';
 
 import { CrudService } from "app/admin/Shared/crud.service";
-import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   imports: [ FormsModule,
@@ -15,12 +14,16 @@ import { EditComponent } from './edit/edit.component';
       {
         path : 'admin',
         component : AdminComponent,
+
+       // In both cases the admin search compenent will be loaded 
+
         children :[ 
            {
              path : '',
              component : AdminSearchComponent
            },
            {
+             
              path : ':searchText',
              component : AdminSearchComponent
            }
@@ -29,7 +32,16 @@ import { EditComponent } from './edit/edit.component';
     ])
   ],
    providers: [CrudService],
-  declarations: [AdminComponent, AdminSearchComponent, EditComponent]
+  declarations: [AdminComponent, AdminSearchComponent]
   
 })
-export class AdminModule { }
+export class AdminModule { 
+
+  /**
+   *
+   */
+  constructor() {
+   console.log("Admin Module Loaded ...");
+    
+  }
+}

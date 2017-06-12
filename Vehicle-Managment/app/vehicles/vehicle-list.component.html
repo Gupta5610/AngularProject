@@ -1,0 +1,33 @@
+<div class='panel-heading' align='center'>
+  <h1>{{pageTitle}}</h1>
+</div>
+
+
+<div class='panel panel-primary' style=" margin:30px;">
+  <div class='panel-heading' style="text-align:center;">
+    {{tableTitle}}
+  </div>
+  <br>
+  <div class='table-responsive'>
+    <table class='table'>
+      <thead>
+        <th> Customer Name </th>
+        <th> Registration No </th>
+        <th> Actions </th>
+      </thead>
+      <br>
+      <tbody>
+        <tr *ngFor='let customer of customers'>
+          <td>{{customer.firstName | uppercase }} {{customer.lastName | uppercase }}</td>
+          <td>{{customer.registrationNo | uppercase }}</td>
+          <td> <button class='btn btn-primary' [routerLink]="['/view',customer.index]"> View </button>
+            <input type="button" class='btn btn-primary' value="Delete" (click)=onDelete(customer)>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br> <br> <br>
+<input style="margin-left:39%; margin-right:30px; " type="submit" class='btn btn-primary buttonDesign' (click)="addVehicle()"
+  value="Add">
+<input type="button" value="Undo" class='btn btn-primary buttonDesign' (click)="undo()">

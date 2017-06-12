@@ -1,0 +1,80 @@
+#pageHeading{
+    
+    background-color: burlywood;
+    height: 80px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: larger;
+    padding-bottom: 25px;
+    border-bottom: 3px solid white;
+}
+
+#tableHeading{
+    color: burlywood;
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+#table{
+    
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid burlywood;
+    box-shadow: 0px 3px 5px burlywood;
+}
+
+td, th {
+   border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 15%;
+}
+
+thead{
+     
+     background-color: burlywood;
+         font-size: larger;
+}
+
+#button{
+    
+    text-align: center;
+    background-color: burlywood;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+    border: none;
+}
+
+#button:hover{
+    color: black;
+    background-color: white;
+    outline: none;
+    border: 2px solid burlywood;
+}
+
+#addButton{
+    
+    background-color: burlywood;
+    height: 45px;
+    width: 200px;
+    font-size: larger;
+    
+    border: none;
+    box-shadow: 5px 5px 5px grey;
+    text-align: center;
+    margin-left: 44%;
+}
+
+#addButton:hover{
+    color: black;
+    border-radius: 10px;
+    background-color: white;
+    outline: none;
+    border: 3px solid burlywood;
+    box-shadow: 2px 2px 8px burlywood, -2px -2px 8px burlywood;
+}
+

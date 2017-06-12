@@ -1,6 +1,7 @@
 .list{
     width:100%;
-    border: black solid;
+    border: 2px solid #1D8CDC;
+    border-radius: 10px;
 }
 
 #leftContent{
@@ -17,4 +18,32 @@
    display: inline-block;
    float: right;
    margin-top: 3%;
+}
+
+h1{
+    color:#1D8CDC;
+}
+
+hr{
+    color:#1D8CDC;
+}
+
+.formButton{
+    margin: 0 10px 0 10px;
+    background-color: #1D8CDC;
+    color: white;
+    font-size: 16px;
+    width: 40%;
+    height: 38px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+.formButton:hover{
+ color: #1D8CDC;
+ background-color: white;
+ border:2px solid #1D8CDC;
 }

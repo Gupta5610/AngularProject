@@ -7,14 +7,17 @@ import { Router } from "@angular/router";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+ 
   title = "Retail Inventory Management";
 
+  constructor(private _router:Router) {
+    console.log("AppComponent Constructor called ...")
+   }
   
-
-  constructor(private _router:Router) { }
-  
+  // To navigate back to the login component 
   onHomeClicked()
   {
+    console.log("onHomeClicked ...")
     this._router.navigate(['/']);
   }
 }

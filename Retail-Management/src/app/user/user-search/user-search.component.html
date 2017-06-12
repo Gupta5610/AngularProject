@@ -1,4 +1,5 @@
-<div *ngFor= "let product of products"  class ="productGroup">  
+<div *ngFor= "let product of products"  class ="productGroup"> 
+ <div *ngIf = "product.inStock">  
   <div  id="leftContent">  
    <p><label>Name : {{product.name}}</label></p>
    <p><label>Type : {{product.type}}</label></p>
@@ -6,7 +7,8 @@
    <p><label>Discount : {{product.discount}}</label></p>
   </div>
  <div id="rightContent"> 
-  <button (click)="onButtonClick(product)">{{product.cart? 'remove' : 'add'}}</button>
+  <button class="formButton" (click)="onButtonClick(product)">{{product.cart? 'Remove from Cart' : 'Add to Cart' }}</button>
  </div>  
    <hr>
+ </div> 
 </div>  

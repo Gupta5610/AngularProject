@@ -1,7 +1,7 @@
 <div id="AdminHeader" >
-    <input name="q" type="text" size="60" placeholder="Type here....." [(ngModel)]="itemToSearch"/>
-    <button (click)="onSearchClicked()">Search</button> |
-    <button (click)="onAddToCartClicked()" > Add  </button>
+    <input class="search" name="q" type="text" size="60" placeholder="Type here....." [(ngModel)]="itemToSearch"/>
+    <button class="searchButton" (click)="onSearchClicked()">Search</button> |
+    <button class="searchButton" (click)="onAddProduct()" > Add  </button>
 </div>
 <div id="AdminContent" >
    <router-outlet></router-outlet>
@@ -13,31 +13,32 @@
                 
                     <div class ="form group">
                         <label> Name </label>
-                        <input [(ngModel)]="product.name" type="text" name="name" >
+                        <input class="formInput" [(ngModel)]="product.name" type="text" name="name" >
                     </div>
                     
                     <div class ="form group">
                         <label> Type </label>
-                        <input  [(ngModel)]="product.type" type="text" name="type">
+                        <input class="formInput" [(ngModel)]="product.type" type="text" name="type">
                     </div>
 
                     <div class ="form group">
                         <label> Cost </label>
-                        <input [(ngModel)]="product.cost" type="text"  name="cost">
+                        <input class="formInput" [(ngModel)]="product.cost" type="text"  name="cost">
                     </div>
 
                     <div class ="form group">
                         <label> Discount </label>
-                        <input [(ngModel)]="product.discount" type="text"  name="discount">
+                        <input class="formInput" [(ngModel)]="product.discount" type="text"  name="discount">
                     </div>
                     <div class ="form group">
                         <label> OfferList </label>
-                        <input [(ngModel)]="product.include" type="checkbox"  name="offlistinclude">
+                        <input class="formInput" [(ngModel)]="product.include" type="checkbox"  name="offlistinclude">
                     </div>
 
                     <br><br><br>
                     <div class ="form group">
-                        <button (click)="onAddProduct()"> Add </button>
+                        <button class="formButton" (click)="onAddProductToList()"> Add </button>
+                        <button class="formButton" (click)="closeModal()"> Cancel </button>
                     </div>
 
                 </form> 

@@ -12,14 +12,24 @@ export class SearchService {
     console.log("Search Service initialized ......");
   }
 
-   getPost()
+   // retrieve the data from backend (firebase)
+
+   getProductList()
     {
+        console.log("getProductList ... ");
+        
         return this.http.get('https://retail-app-bd8a5.firebaseio.com/list.json')
         .map(res => res.json());
     }
 
-    putpost(Products:Iproduct[])
+   // push the data to backend (firebase)
+
+    putProductList(Products:Iproduct[])
     {
+        console.log("putProductList ... ");
+
+        // create a header for the http request 
+
          const header = new Headers();
          header.append('Content-type','application/json: charset=utf-8');
 
